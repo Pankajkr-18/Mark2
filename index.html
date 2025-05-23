@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Do you love me</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div
+        class="tenor-gif-embed"
+        data-postid="22885016"
+        data-share-method="host"
+        data-aspect-ratio="1.04918"
+        data-width="100%"
+      >
+        <a href="https://tenor.com/view/manja-gif-22885016">Manja Sticker</a>
+        from
+        <a href="https://tenor.com/search/manja-stickers">Manja Stickers</a>
+      </div>
+      <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+      
+      <h1>Do you love me? 🤗</h1>
+      <p>Pankaj is all yours ❤️</p>
+
+      <div class="btn">
+        <a href="yes.html" class="yes-btn" id="move-yes">Yes</a>
+        <a href="no1.html" class="no-btn">No</a>
+      </div>
+    </div>
+
+    <script>
+      function moveRandomEl(elm) {
+        // Generate new random position each time
+        const randomTop = Math.floor(Math.random() * 80 + 10);
+        const randomLeft = Math.floor(Math.random() * 80 + 10);
+        
+        elm.style.position = "fixed";
+        elm.style.top = randomTop + "%";
+        elm.style.left = randomLeft + "%";
+        elm.style.transition = "all 0.3s ease";
+        elm.style.zIndex = "1000";
+        
+        console.log("Button moved to:", randomTop, randomLeft); // For debugging
+      }
+
+      const moveYes = document.querySelector("#move-yes");
+      
+      // Move on hover
+      moveYes.addEventListener("mouseenter", function (e) {
+        moveRandomEl(e.target);
+      });
+
+      // Move on click and prevent navigation
+      moveYes.addEventListener("click", function (e) {
+        e.preventDefault();
+        moveRandomEl(e.target);
+      });
+
+      // Move on touch for mobile
+      moveYes.addEventListener("touchstart", function (e) {
+        e.preventDefault();
+        moveRandomEl(e.target);
+      });
+
+      // Additional event for mouse down
+      moveYes.addEventListener("mousedown", function (e) {
+        e.preventDefault();
+        moveRandomEl(e.target);
+      });
+    </script>
+  </body>
+</html>
